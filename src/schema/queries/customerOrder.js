@@ -5,7 +5,7 @@ import { fakeDatabase } from '../../FakeDatabase';
 export default {
     customerOrder: {
         type: Order,
-        description: "Get a recent orders list",
+        description: "Get exact a customer order",
         args: {
             id: { type: new GraphQLNonNull(GraphQLString) }
         },

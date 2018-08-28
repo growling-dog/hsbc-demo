@@ -1,0 +1,49 @@
+query {
+  customer(id: "88d6bec2"){
+   	id
+    name
+    email
+  }
+}
+
+query {
+  customerOrder(id: "1398"){
+   	id
+		stock_name
+    stock_share
+    customer {
+      name
+      email
+    }
+  }
+}
+
+query {
+  customerOrders {
+   	id
+		stock_name
+    stock_share
+    customer {
+      name
+      email
+    }
+  }
+}
+
+
+############## Mutation ##########
+mutation($post: PostInput){
+  addCustomerOrder(post: $post){
+    id
+    stock_name
+    stock_share
+  }
+}
+/////////Query Variables//////////
+{
+  "post" : {
+		"stock_name": "ICBC",
+    "stock_share": 1000,
+    "customer": "88d6bec2"
+  }
+}

@@ -5,7 +5,7 @@ import { fakeDatabase } from '../../FakeDatabase';
 export default {
     customerOrders: {
         type: new GraphQLList(Order),
-        description: "Get a list of recent orders",
+        description: "Get a list of customer orders",
         args: {},
         resolve: function () {
             return fakeDatabase.getCustomerOrders();
